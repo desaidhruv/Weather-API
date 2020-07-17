@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,700&display=swap');
 body{
-    background-color: #f5f5f5;
+    background-image: url('weather.jpg');
     font-family: 'Poppins', sans-serif;
   }
   h1,h7,label{
@@ -11,10 +11,13 @@ body{
   }
   .btn{
     border-radius: 25px;
-    background-color: #f4f4f4;
+    background-color: #ee8e6b;
+background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
+    
   }
   .card{
     background-color: #e0dede;
+    opacity: .8;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
@@ -27,3 +30,25 @@ box-shadow: 4px 10px 35px -15px rgba(0,0,0,0.75);
   img{
    display:block; width:30%; margin-left: auto; margin-right: auto;
   }
+
+  input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('icons8-search-26.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    width: 100%;
+  }
+  input:focus{
+    outline: none;
+}
