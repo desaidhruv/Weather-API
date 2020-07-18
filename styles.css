@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,700&display=swap');
 body{
-    background-image: url('weather.jpg');
+    background-image: url('bgweather.jpg');
     font-family: 'Poppins', sans-serif;
+    background-size: cover;
   }
   h1,h7,label{
       font-weight: bold;
@@ -11,12 +12,12 @@ body{
   }
   .btn{
     border-radius: 25px;
-    background-color: #ee8e6b;
-background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
-    
+    background-color: #045de9;
+    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+    color: white;
   }
   .card{
-    background-color: #e0dede;
+    background-color: #bbe1fa;
     opacity: .8;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
@@ -24,17 +25,20 @@ background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
   }
   .card:hover{
    -webkit-box-shadow: 4px 10px 35px -15px rgba(0,0,0,0.75);
--moz-box-shadow: 4px 10px 35px -15px rgba(0,0,0,0.75);
-box-shadow: 4px 10px 35px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 10px 35px -15px rgba(0,0,0,0.75);
+  box-shadow: 4px 10px 35px -15px rgba(0,0,0,0.75);
   }
   img{
-   display:block; width:30%; margin-left: auto; margin-right: auto;
+   display:block; 
+   width:30%; 
+   margin-left: auto; 
+   margin-right: auto;
   }
 
   input[type=text] {
     width: 130px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 2px solid #d3dbff;
     border-radius: 30px;
     font-size: 16px;
     background-color: white;
