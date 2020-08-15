@@ -1,11 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,700&display=swap');
 body{
-    background-image: url('bgweather.jpg');
+    /* background-image: url('weather.jpg') ; */
     font-family: 'Poppins', sans-serif;
-    background-size: cover;
+    /* Location of the image */
+  background-image: url(bgweather.jpg);
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
   }
   h1,h7,label{
       font-weight: bold;
+  }
+  h1{
+    color: white;
   }
   label{
       font-size: 1.4em;
@@ -56,3 +74,23 @@ body{
   input:focus{
     outline: none;
 }
+/* @media screen and (min-width: 768px) {
+  
+}
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size:60px;
+  }
+  div.card {
+    width: 200px;
+    font-size: 18px;
+
+  }
+  input[type=text]{
+    width: 330px;
+  }
+  .btn{
+    width: 220px;
+    font-size:25px;
+  }
+} */
