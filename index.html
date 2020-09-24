@@ -29,10 +29,18 @@
                     <p class="title">What's the Weather?</p>
                     <form action="" id="myForm">
                         <div class="control has-icons-left">
-                            <input class="input is-medium is-rounded" id="city_name" placeholder="Search City">
-                            <span class="icon is-medium is-left">
-                                <i class="fas fa-search"></i>
-                            </span>
+                            <div class="field is-grouped">
+                                <p class="control is-expanded">
+                                    <input class="input is-rounded" type="text" placeholder="Search City" id="city_name">
+                                    <span class="icon is-medium is-left">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </p>
+                                <p class="control">
+                                    <button type="submit"
+                                        class="button is-primary is-light is-rounded"><strong>Search</strong></button>
+                                </p>
+                            </div>
                         </div><br>
                         <div class="tile is-parent weather_box  is-8">
                             <article class="tile is-child box has-text-centered">
