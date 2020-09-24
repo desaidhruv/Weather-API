@@ -1,69 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Weather App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-         <link rel="stylesheet" href="styles.css">
-         <link rel="manifest" href="manifest.json">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,600&display=swap"
+        rel="stylesheet">
+        <link rel="manifest" href="manifest.json">
          <link rel="apple-touch-icon" href="images/logo96.png">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-          <div class="container" style="max-width: 100%;height: 500px;">
-            <div class="row justify-content-center" style="height:300px;">
-                <h1 class="text-center" >Weather</h1>
-              <div class="card text-center hoverable" style="width: 35rem;">
-                <div class="card-body">
-                    <p class="card-text">
-                      <label for="" class="form-check-label">Enter the city name:</label><br>
-                      <input id="last_name" type="text" class="validate city">
-                      <div>
-                        <button id="getWeatherforecast" class="btn btn-light">Get weatherr</button>
-                      </div>
-                      <div><br></div>
-                    <div id="showWeatherForecast"></div>
-                    </p>
+    <div class="container"><br>
+        <div class="tile is-ancestor">
+            <div class="tile is-6 is-vertical is-parent">
+                <div class="tile is-child box">
+                    <figure class="image is-4by3">
+                        <img src="weather.svg">
+                    </figure>
                 </div>
-              </div>
             </div>
-          </div>
-        
-        
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous">
- </script>
-<script>$(document).ready(function(){
+            <div class="tile is-parent">
+                <div class="tile is-child box">
+                    <p class="title">What's the Weather?</p>
+                    <form action="" id="myForm">
+                        <div class="control has-icons-left">
+                            <input class="input is-medium is-rounded" id="city_name" placeholder="Search City">
+                            <span class="icon is-medium is-left">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div><br>
+                        <div class="tile is-parent weather_box  is-8">
+                            <article class="tile is-child box has-text-centered">
+                                <figure class="image is-128x128 image_city ml-6"
+                                    style="margin-left: 5.5rem !important;">
+                                    <img src="011-cloud.png">
+                                </figure>
+                                <p class="title title_city">It's a lovely day.</p>
+                                <p class="title title_temp ">0°</p>
+                                <p class="sub-title">Celcius</p>
+                                <p class="title is-size-4">Feels like <span class="feels"></span> </p>
+                                <!-- Main container -->
+                                <nav class="level is-mobile">
+                                    <!-- Left side -->
+                                    <div class="level-left">
+                                        <div class="level-item">
+                                            <p class=" is-5">
+                                                <strong class="is-size-4 place">Place</strong>
+                                            </p>
+                                        </div>
+                                    </div>
 
-  $("#getWeatherforecast").click(function(){
-          var city = $(".city").val();
-          var key = 'e91c63fb77cd1cb1a1d23874e16dc4af';
-
-          $.ajax({
-              url : 'https://api.openweathermap.org/data/2.5/weather',
-              dataType : 'json',
-              type: 'GET',
-              data:{q:city, appid:key, units:'metric'},
-              success: function(data){
-                  var wf = '';
-                  $.each(data.weather, function(index, val){
-                      wf +='<p><h5>City: </h5><h3><b>' + data.name + "</b><h3><img style='' src=" + val.icon+".gif></p><p><h7>Temperature:</h7> " + data.main.temp + '&deg;C ' + 
-                          '</p> ' + val.main + " , <p><h7>Description: </h7>" + val.description + "</p>"
-                  });
-                  $("#showWeatherForecast").html(wf);
-
-              }
-          });
-      });
-
-      });</script>
-      <script src="scripts.js"></script>
+                                    <!-- Right side -->
+                                    <div class="level-right subtitle">
+                                        <p class="level-item is-size-4 date"><strong>Mumbai</strong></p>
+                                    </div>
+                                </nav>
+                            </article>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Made</strong> with <i class="fa fa-heart" style="color:red;"></i> <a
+                    href="https://jgthms.com">Dhruv Desai</a>.
+            </p>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
