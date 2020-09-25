@@ -15,12 +15,31 @@
 </head>
 
 <body>
+    <nav class="navbar is-transparent ">
+
+        <div class="toggleWrapper">
+            <input type="checkbox" class="dn btn inverted" id="dn" />
+            <label for="dn" class="toggle">
+                <span class="toggle__handler">
+                    <span class="crater crater--1"></span>
+                    <span class="crater crater--2"></span>
+                    <span class="crater crater--3"></span>
+                </span>
+                <span class="star star--1"></span>
+                <span class="star star--2"></span>
+                <span class="star star--3"></span>
+                <span class="star star--4"></span>
+                <span class="star star--5"></span>
+                <span class="star star--6"></span>
+            </label>
+        </div>
+    </nav>
     <div class="container"><br>
         <div class="tile is-ancestor">
             <div class="tile is-6 is-vertical is-parent mx-4">
-                <div class="tile is-child box">
+                <div class="tile is-child box inverted">
                     <figure class="image is-4by3">
-                        <img src="images/weather.svg">
+                        <img src="images/sapiens.svg">
                     </figure>
                 </div>
             </div>
@@ -31,7 +50,7 @@
                         <div class="control has-icons-left">
                             <div class="field is-grouped">
                                 <p class="control is-expanded">
-                                    <input class="input is-rounded" type="text" placeholder="Search City"
+                                    <input class="input is-rounded inverted" type="text" placeholder="Search City"
                                         id="city_name">
                                     <span class="icon is-medium is-left">
                                         <i class="fas fa-search"></i>
@@ -39,13 +58,13 @@
                                 </p>
                                 <p class="control">
                                     <button type="submit"
-                                        class="button is-primary is-light is-rounded"><strong>Search</strong></button>
+                                        class="button is-primary is-light is-rounded inverted"><strong>Search</strong></button>
                                 </p>
                             </div>
                         </div><br>
                         <div class="tile is-parent weather_box  is-8">
                             <article class="tile is-child box has-text-centered">
-                                <figure class="image is-128x128 image_city ml-6"
+                                <figure class="image is-128x128 image_city ml-6 inverted"
                                     style="margin-left: 5.5rem !important;">
                                     <img src="images/011-cloud.png">
                                 </figure>
@@ -53,9 +72,7 @@
                                 <p class="title title_temp ">0°</p>
                                 <p class="sub-title">Celcius</p>
                                 <p class="title is-size-4">Feels like <span class="feels"></span> </p>
-                                <!-- Main container -->
                                 <nav class="level is-mobile">
-                                    <!-- Left side -->
                                     <div class="level-left">
                                         <div class="level-item">
                                             <p class=" is-5">
@@ -63,8 +80,6 @@
                                             </p>
                                         </div>
                                     </div>
-
-                                    <!-- Right side -->
                                     <div class="level-right subtitle">
                                         <p class="level-item is-size-4 date"><strong>Mumbai</strong></p>
                                     </div>
@@ -80,11 +95,20 @@
         <div class="content has-text-centered">
             <p>
                 <strong>Made</strong> with <i class="fa fa-heart" style="color:red;"></i> <a
-                    href="https://jgthms.com">Dhruv Desai</a>.
+                    href="https://dhruvdesai.netlify.app/">Dhruv Desai</a>.
             </p>
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let button = document.querySelector('.btn')
+        button.addEventListener("click", function () {
+            document.documentElement.classList.toggle('dark-mode');
+            document.querySelectorAll('.inverted').forEach((result) => {
+                result.classList.toggle('invert');
+            });
+        });
+    </script>
     <script src="main.js"></script>
 </body>
 
