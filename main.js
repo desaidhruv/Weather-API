@@ -10,7 +10,6 @@ $(document).ready(function () {
         return t.getDate() + ' ' + monthShortNames[t.getMonth()] + ', ' + t.getFullYear();
     }
 
-    console.log()
     $('.date').html(dateFormat2(new Date()))
     let form = $('#myForm')
     form.on('submit', (e) => {
