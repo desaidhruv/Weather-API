@@ -100,7 +100,15 @@
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+    <script>
+        let button = document.querySelector('.btn')
+        button.addEventListener("click me", function () {
+            document.documentElement.classList.toggle('dark-mode');
+            document.querySelectorAll('.inverted').forEach((result) => {
+                result.classList.toggle('invert');
+            });
+        });
+  </script>    
     <script src="main.js"></script>
 </body>
 
